@@ -1,0 +1,137 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'residents.css' %}">
+    <script src="{% static 'residents.js' %}"></script>
+    
+    <title>HOME</title>
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">R E S I D E N T</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="margin-top:30px">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>Your Profile</h2>
+                {% comment %} {% for resident in Resident %} {% endcomment %}
+                <h5>{{ Resident.fname }} {{ Resident.lname }}</h5>
+                {% comment %} {% endfor %} {% endcomment %}
+                {% comment %} {% for cont in Contract %}
+                <h6>{{ cont. }}</h6>
+                {% endfor %} {% endcomment %}
+                
+
+                {% for room in Rooms %}
+                    {% for roomCell in room %}
+                        {{ room.id }}
+                    {% endfor %}
+                {% endfor %}
+                {% for contract in Contracts %}
+                    <p>
+                    promise ID :{{ contract.id }}
+                    room_rate :{{ contract.room_rate }}
+                    {{ contract.start_date }}
+                    {{ contract.end_date }}
+                    <p>
+                {% endfor %}
+                
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+                <h3>Some Links</h3>
+                <p>Lorem ipsum dolor sit ame.</p>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+                <hr class="d-sm-none">
+            </div>
+
+            <div class="col-sm-8">
+                <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav row w-100 text-center">
+                            <li class="nav-item col-12 col-sm-3" onclick="CheckCost()">
+                                <p class="nav-link" >Check cost</p>
+                            </li>
+                            <li class="nav-item col-12 col-sm-3" onclick="CheckCost()" >
+                                <p class="nav-link" >Pay cost</p>
+                            </li>
+                            <li class="nav-item col-12 col-sm-3" onclick="">
+                                <p class="nav-link" >Facility</p>
+                            </li>
+                            <li class="nav-item col-12 col-sm-3" onclick="Comments()">
+                                    <p class="nav-link" >Comment</p>
+                                </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div id="resident-content" class="bg-dark">
+                
+                </div>
+                {% comment %} <h2>TITLE HEADING</h2>
+                <h5>Title description, Dec 7, 2017</h5>
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco.</p>
+                <br>
+                <h2>TITLE HEADING</h2>
+                <h5>Title description, Sep 2, 2017</h5>
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco.</p> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
